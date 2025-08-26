@@ -15,6 +15,10 @@ contract RegularDeploy {
 contract Create2Deploy {
     event Deployed(address addr, uint salt);
 
+    //Runtime code aka Execution code/Main code which is part of the contract that contains 
+    //the logic and functions that can be executed after the contract has been deployed. 
+    //Creation code aka Contruction code is the portion of smart contract code that is
+    //only executed once during the contract's deployment
     function getBytecode(address _owner, uint _foo) public pure returns (bytes memory) {
         bytes memory bytecode = type(MockContract).creationCode;
 
